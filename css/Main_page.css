@@ -1,0 +1,32 @@
+body {
+  background-color: #f2f2f2;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+
+#intro {
+  text-align: center;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 12px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 5em;
+}
+
+hr {
+  width: 400px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.buy{
+  color:#FF9900;
+}
+.shop{
+  color: whitesmoke;
+}
+
