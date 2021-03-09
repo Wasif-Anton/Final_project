@@ -50,37 +50,39 @@
   <div class="text-center">
     <form class="form-signin" action="includes/Sign_up.inc.php" method="POST">
       <div class="container">
+      <fieldset>
         <div class="row">
           <div class="col-lg-12">
             <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
             <!-- Input - ID -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="text" name="id" placeholder="Identity" maxlength="9" required autofocus method="POST">
+              <input class="form-control form-control-sm" type="text" name="id" placeholder="Identity" maxlength="9"  method="POST" autofocus required>
             </div>
             <!-- Input - Name -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="text" name="name" placeholder="Name" maxlength="30" required method="POST">
+              <input class="form-control form-control-sm" type="text" name="name" placeholder="Name" maxlength="30" method="POST" required>
             </div>
             <!-- Input - Email -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" maxlength="40" required method="POST">
+              <input class="form-control form-control-sm" type="email" name="email" placeholder="Email" maxlength="40" method="POST" required>
             </div>
             <!-- Input - Password -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="password" name="password" placeholder="Password" maxlengthr="20" required method="POST">
+              <input class="form-control form-control-sm" id="password" type="password" name="password" placeholder="Password" maxlengthr="20" method="POST" required>
             </div>
             <!-- Input - Retype Password -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="password" name="retype_password" placeholder="Retype Password" maxlength="20" required method="POST">
+              <input class="form-control form-control-sm" id="retype_password" type="password" name="retype_password" placeholder="Retype Password" maxlength="20" method="POST" required>
             </div>
+            <!-- Adding JS cheking password -->
             <!-- Input - Phone Number -->
             <div class="form-group">
-              <input class="form-control form-control-sm" type="tel" name="phone" placeholder="Phone Number" maxlength="10" required method="POST">
+              <input class="form-control form-control-sm" type="tel" name="phone" placeholder="Phone Number" maxlength="10" method="POST" required>
             </div>
             <!-- Select, Input - Location: North / Center / South -->
             <div class="form-group form-check-inline form-control-sm">
               Location:
-              <select class="form-control form-control-sm" id="Location" name="location" required method="POST">
+              <select class="form-control form-control-sm" id="Location" name="location" method="POST" required>
                 <option value="" disabled selected required>Select Your Location</option>
                 <option value="North">North</option>
                 <option value="Center">Center</option>
@@ -96,6 +98,7 @@
           </div>
         </div>
       </div>
+    </fieldset>
     </form>
     <!--     -->
     <!-- PHP -->
@@ -146,7 +149,29 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
 </body>
+
+<!-- Setting JS for password check -->
+<script type="text/javascript">
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("retype_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+    confirm_passwordt.reportValidity() 
+     // no match
+
+  } else {
+    confirm_password.setCustomValidity('');
+    
+         // yes match
+
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
 
 </html>
