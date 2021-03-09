@@ -29,7 +29,7 @@
 
 
 ## Downloading the Project from GitHub:
-1. Download the project from this link https://github.com/Wasif-Anton/final_project.git
+1. Download the project from this link https://github.com/Wasif-Anton/project.git
 
 2. Save the project inside **htdocs** folder
 <img width="1081" alt="Screen Shot 2021-02-28 at 16 40 38" src="https://user-images.githubusercontent.com/26307376/109422501-7a856900-79e4-11eb-9f03-9b925cc71fe0.png">
